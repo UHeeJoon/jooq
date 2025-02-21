@@ -49,9 +49,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Record" />
+        <option value="Interface" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -72,8 +73,15 @@
     &quot;Gradle.FilmRepositoryTest.test.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.FilmRepositoryTest.test2.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.FilmRepositoryTest.test3.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.JooqConditionTest.AND조건_1.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.JooqConditionTest.in절_동적_조건_검색_1.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.JooqConditionTest.in절_동적_조건_검색_2.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.JooqConditionTest.or조건_1.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.JooqConditionTest.다중_조건_검색_1.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.JooqConditionTest.다중_조건_검색_2.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.JooqDaoWrapperTest.test.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.JooqDaoWrapperTest.상속_DAO_1.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.JooqDaoWrapperTest.상속_DAO_2.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.JooqFirstTest.contextLoads.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.jooq-first [generateSakilaDBJooq].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -111,14 +119,15 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.example.jooqfirst.condition" />
       <recent name="com.example.jooqfirst.film" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.jooqfirst.film" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.JooqDaoWrapperTest.상속_DAO_2">
-    <configuration name="FilmRepositoryTest.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.JooqConditionTest.다중_조건_검색_2">
+    <configuration name="JooqConditionTest.다중_조건_검색_1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/jooq-first" />
@@ -131,7 +140,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.jooqfirst.film.FilmRepositoryTest.test&quot;" />
+            <option value="&quot;com.example.jooqfirst.condition.JooqConditionTest.다중_조건_검색_1&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -142,7 +151,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="FilmRepositoryTest.test2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="JooqConditionTest.다중_조건_검색_2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/jooq-first" />
@@ -155,7 +164,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.jooqfirst.film.FilmRepositoryTest.test2&quot;" />
+            <option value="&quot;com.example.jooqfirst.condition.JooqConditionTest.다중_조건_검색_2&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -166,7 +175,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="FilmRepositoryTest.test3" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="JooqConditionTest.in절_동적_조건_검색_1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/jooq-first" />
@@ -179,7 +188,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.jooqfirst.film.FilmRepositoryTest.test3&quot;" />
+            <option value="&quot;com.example.jooqfirst.condition.JooqConditionTest.in절_동적_조건_검색_1&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -190,7 +199,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="JooqDaoWrapperTest.상속_DAO_2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="JooqConditionTest.in절_동적_조건_검색_2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/jooq-first" />
@@ -203,7 +212,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.jooqfirst.film.JooqDaoWrapperTest.상속_DAO_2&quot;" />
+            <option value="&quot;com.example.jooqfirst.condition.JooqConditionTest.in절_동적_조건_검색_2&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -214,7 +223,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="JooqDaoWrapperTest.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="JooqConditionTest.or조건_1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/jooq-first" />
@@ -227,7 +236,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.jooqfirst.film.JooqDaoWrapperTest.test&quot;" />
+            <option value="&quot;com.example.jooqfirst.condition.JooqConditionTest.or조건_1&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -247,11 +256,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.JooqDaoWrapperTest.상속_DAO_2" />
-        <item itemvalue="Gradle.JooqDaoWrapperTest.test" />
-        <item itemvalue="Gradle.FilmRepositoryTest.test" />
-        <item itemvalue="Gradle.FilmRepositoryTest.test3" />
-        <item itemvalue="Gradle.FilmRepositoryTest.test2" />
+        <item itemvalue="Gradle.JooqConditionTest.다중_조건_검색_2" />
+        <item itemvalue="Gradle.JooqConditionTest.다중_조건_검색_1" />
+        <item itemvalue="Gradle.JooqConditionTest.in절_동적_조건_검색_2" />
+        <item itemvalue="Gradle.JooqConditionTest.in절_동적_조건_검색_1" />
+        <item itemvalue="Gradle.JooqConditionTest.or조건_1" />
       </list>
     </recent_temporary>
   </component>
@@ -274,7 +283,7 @@
       <workItem from="1739691442171" duration="1304000" />
       <workItem from="1739692806239" duration="11093000" />
       <workItem from="1739879043274" duration="46000" />
-      <workItem from="1740136271641" duration="3175000" />
+      <workItem from="1740136271641" duration="6395000" />
     </task>
     <servers />
   </component>
