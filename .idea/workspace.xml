@@ -49,9 +49,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
         <option value="Record" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -72,6 +72,8 @@
     &quot;Gradle.FilmRepositoryTest.test.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.FilmRepositoryTest.test2.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.FilmRepositoryTest.test3.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.JooqDaoWrapperTest.test.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.JooqDaoWrapperTest.상속_DAO_1.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.JooqFirstTest.contextLoads.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.jooq-first [generateSakilaDBJooq].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -111,8 +113,11 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.example.jooqfirst.film" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.jooqfirst.film" />
+    </key>
   </component>
-  <component name="RunManager" selected="Gradle.FilmRepositoryTest.test">
+  <component name="RunManager" selected="Gradle.JooqDaoWrapperTest.상속_DAO_2">
     <configuration name="FilmRepositoryTest.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -185,7 +190,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="JooqFirstTest.contextLoads" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="JooqDaoWrapperTest.상속_DAO_2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/jooq-first" />
@@ -198,7 +203,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.jooqfirst.JooqFirstTest.contextLoads&quot;" />
+            <option value="&quot;com.example.jooqfirst.film.JooqDaoWrapperTest.상속_DAO_2&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -209,26 +214,28 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="jooq-first [generateSakilaDBJooq]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="JooqDaoWrapperTest.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/jooq-first" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="generateSakilaDBJooq" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.jooqfirst.film.JooqDaoWrapperTest.test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
+      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="JooqFirstApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
@@ -240,11 +247,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.JooqDaoWrapperTest.상속_DAO_2" />
+        <item itemvalue="Gradle.JooqDaoWrapperTest.test" />
         <item itemvalue="Gradle.FilmRepositoryTest.test" />
         <item itemvalue="Gradle.FilmRepositoryTest.test3" />
         <item itemvalue="Gradle.FilmRepositoryTest.test2" />
-        <item itemvalue="Gradle.jooq-first [generateSakilaDBJooq]" />
-        <item itemvalue="Gradle.JooqFirstTest.contextLoads" />
       </list>
     </recent_temporary>
   </component>
@@ -267,7 +274,7 @@
       <workItem from="1739691442171" duration="1304000" />
       <workItem from="1739692806239" duration="11093000" />
       <workItem from="1739879043274" duration="46000" />
-      <workItem from="1740136271641" duration="1358000" />
+      <workItem from="1740136271641" duration="3175000" />
     </task>
     <servers />
   </component>
