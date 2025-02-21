@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: jooq-first
+
+  datasource:
+    url: jdbc:mysql://localhost:3308/sakila
+    username: root
+    password: passwd
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+logging:
+  level:
+    org:
+      jooq:
+        tools:
+          LoggerListener: debug
+
