@@ -12,9 +12,11 @@ import org.jooq.generated.tables.pojos.Film;
 import org.jooq.generated.tables.records.ActorRecord;
 import org.jooq.impl.DSL;
 import org.springframework.stereotype.Repository;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import static com.example.jooqfirst.util.jooq.JooqListConditionUtil.containsIfNotBlank;
 import static com.example.jooqfirst.util.jooq.JooqListConditionUtil.inIfNotEmpty;
@@ -153,5 +155,56 @@ public class ActorRepository {
     ).valuesOfRows(
       rows
     ).execute();
+  }
+
+  public void update(Actor actor) {
+    actorDao.update(actor);
+  }
+
+  public Actor findById(Long actorId) {
+    return actorDao.findById(actorId);
+  }
+
+  public int updateWithDto(Long newActorId, ActorUpdateRequest request) {
+    var firstName = StringUtils.hasText(request.firstName()) ? DSL.val(request.firstName()) : DSL.noField(ACTOR.FIRST_NAME);
+    var lastName = StringUtils.hasText(request.lastName()) ? DSL.val(request.lastName()) : DSL.noField(ACTOR.LAST_NAME);
+
+    return dslContext.update(ACTOR)
+      .set(ACTOR.FIRST_NAME, firstName)
+      .set(ACTOR.LAST_NAME, lastName )
+      .where(ACTOR.ACTOR_ID.eq(newActorId))
+      .execute();
+  }
+
+  public int updateWithRecord(Long newActorId, ActorUpdateRequest request) {
+    ActorRecord record = dslContext.fetchOne(ACTOR, ACTOR.ACTOR_ID.eq(newActorId));
+
+    if (StringUtils.hasText(request.firstName())) {
+      record.setFirstName(request.firstName());
+    }
+
+    if(StringUtils.hasText(request.lastName())) {
+      record.setLastName(request.lastName());
+    }
+
+    return dslContext.update(ACTOR)
+      .set(record)
+      .where(ACTOR.ACTOR_ID.eq(newActorId))
+      .execute();
+
+//    return record.update(); // record.store();
+
+  }
+
+  public int delete(Long newActorId) {
+    return dslContext.deleteFrom(ACTOR)
+      .where(ACTOR.ACTOR_ID.eq(newActorId))
+      .execute();
+  }
+
+  public int deleteWithRecord(Long newActorId) {
+    ActorRecord record = dslContext.fetchOne(ACTOR, ACTOR.ACTOR_ID.eq(newActorId));
+
+    return Objects.requireNonNull(record).delete();
   }
 }
