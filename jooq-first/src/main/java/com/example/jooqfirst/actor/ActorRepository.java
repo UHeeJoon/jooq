@@ -39,6 +39,10 @@ public class ActorRepository {
     this.dslContext = dslContext;
   }
 
+  // ====================
+  // 조회
+  // ====================
+  
   public List<Actor> findByFirstNameAndLastName(String firstName, String lastName) {
     // and 조건
     // 방법 1 - method chaining
@@ -101,6 +105,9 @@ public class ActorRepository {
 
   }
 
+  // ====================
+  // insert
+  // ====================
 
   public Actor saveByDao(Actor actor) {
     // pk(actorId)가 actor에 추가 됨
@@ -157,6 +164,10 @@ public class ActorRepository {
     ).execute();
   }
 
+  // ====================
+  // 데이터 조작
+  // ====================
+
   public void update(Actor actor) {
     actorDao.update(actor);
   }
@@ -206,5 +217,18 @@ public class ActorRepository {
     ActorRecord record = dslContext.fetchOne(ACTOR, ACTOR.ACTOR_ID.eq(newActorId));
 
     return Objects.requireNonNull(record).delete();
+  }
+
+  // ====================
+  // ActiveRecord
+  // ====================
+
+  public ActorRecord findRecordByActorId(Long actorId) {
+    /**
+     * ActiveRecord 를 활용하기 위해서는 dslContext를 반드시 사용해야 한다.
+     * new 키워드로 생성하게 되면 dslContext의 jdbc의 환경들이 적용되지 않는다.
+     */
+    return dslContext
+      .fetchOne(ACTOR, ACTOR.ACTOR_ID.eq(actorId));
   }
 }
