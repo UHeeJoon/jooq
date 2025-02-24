@@ -1,18 +1,17 @@
 package com.example.jooqfirst.actor;
 
-import com.example.jooqfirst.util.jooq.JooqListConditionUtil;
-import org.jooq.*;
+import org.jooq.Configuration;
+import org.jooq.DSLContext;
+import org.jooq.Row2;
 import org.jooq.generated.tables.JActor;
 import org.jooq.generated.tables.JFilm;
 import org.jooq.generated.tables.JFilmActor;
 import org.jooq.generated.tables.daos.ActorDao;
 import org.jooq.generated.tables.pojos.Actor;
 import org.jooq.generated.tables.pojos.Film;
-import org.jooq.generated.tables.records.FilmRecord;
+import org.jooq.generated.tables.records.ActorRecord;
 import org.jooq.impl.DSL;
 import org.springframework.stereotype.Repository;
-import org.springframework.util.ObjectUtils;
-import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.Map;
@@ -101,4 +100,58 @@ public class ActorRepository {
   }
 
 
+  public Actor saveByDao(Actor actor) {
+    // pk(actorId)가 actor에 추가 됨
+    actorDao.insert(actor);
+    return actor;
+  }
+
+  public ActorRecord saveByRecord(Actor actor) {
+    ActorRecord actorRecord = dslContext.newRecord(ACTOR, actor);
+    actorRecord.insert();
+    return actorRecord;
+  }
+
+  public Long saveWithReturningPkOnly(Actor actor) {
+    return dslContext.insertInto(
+        ACTOR,
+        ACTOR.FIRST_NAME,
+        ACTOR.LAST_NAME
+      ).values(
+        actor.getFirstName(),
+        actor.getLastName()
+      ).returningResult(ACTOR.ACTOR_ID)
+      .fetchOneInto(Long.class);
+    //    return dslContext.insertInto(ACTOR)
+//      .set(ACTOR.FIRST_NAME, actor.getFirstName())
+//      .set(ACTOR.LAST_NAME, actor.getLastName())
+//      .returningResult(ACTOR.ACTOR_ID)
+//      .fetchOneInto(Long.class);
+  }
+
+  public Actor saveWithReturning(Actor actor) {
+    return dslContext.insertInto(
+        ACTOR,
+        ACTOR.FIRST_NAME,
+        ACTOR.LAST_NAME
+      ).values(
+        actor.getFirstName(),
+        actor.getLastName()
+      ).returning(ACTOR.fields())
+      .fetchOneInto(Actor.class);
+  }
+
+  public void bulkInsertWithRows(List<Actor> actorList) {
+    List<Row2<String, String>> rows = actorList.stream()
+      .map(actor -> DSL.row(actor.getFirstName(), actor.getLastName()))
+      .toList();
+
+    dslContext.insertInto(
+      ACTOR,
+      ACTOR.FIRST_NAME,
+      ACTOR.LAST_NAME
+    ).valuesOfRows(
+      rows
+    ).execute();
+  }
 }
