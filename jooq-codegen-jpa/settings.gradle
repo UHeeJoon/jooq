@@ -1,0 +1,4 @@
+rootProject.name = 'jooq-first'
+include 'JOOQ-custom'
+include 'entity'
+
