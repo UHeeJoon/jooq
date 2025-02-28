@@ -20,7 +20,7 @@ public class FilmService {
   private final FilmRepository filmRepository;
 
   public FilmWithActorPagedResponse getFilmActorPageRespones(Long page, Long pagesize) {
-    List<FilmWithActor> filmWithActorList = filmRepository.findFilmWithActorList(page, pagesize);
+    List<FilmWithActor> filmWithActorList = filmRepository.findFilmWithActorsList(page, pagesize);
     PagedResponse pagedResponse = new PagedResponse(page, pagesize);
     return new FilmWithActorPagedResponse(
       filmWithActorList,

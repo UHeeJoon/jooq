@@ -44,7 +44,7 @@ public class FilmRepository {
       .fetchOneInto(SimpleFilmInfo.class);
   }
 
-  public List<FilmWithActor> findFilmWithActorList(Long page, Long pagesize) {
+  public List<FilmWithActor> findFilmWithActorsList(Long page, Long pagesize) {
     JFilmActor FILM_ACTOR = JFilmActor.FILM_ACTOR;
     JActor ACTOR = JActor.ACTOR;
     return dsl.select(
@@ -59,5 +59,49 @@ public class FilmRepository {
       .fetchInto(FilmWithActor.class);
   }
 
+  public List<FilmWithActor> findFilmWithActorsListImplicitPathJoin(Long page, Long pageSize) {
+    final JFilmActor FILM_ACTOR = JFilmActor.FILM_ACTOR;
+    return dsl.select(
+        DSL.row(FILM.fields()),
+        DSL.row(FILM_ACTOR.fields()),
+        DSL.row(FILM_ACTOR.actor().fields())
+      )
+      .from(FILM)
+      .join(FILM_ACTOR)
+      .on(FILM.FILM_ID.eq(FILM_ACTOR.FILM_ID))
+      .limit(pageSize)
+      .offset((page - 1) * pageSize)
+      .fetchInto(FilmWithActor.class);
+  }
 
+
+  // 강의에는 이렇게 썼지만
+  public List<FilmWithActor> findFilmWithActorsListExplicitPathJoin (Long page, Long pageSize) {
+    return dsl.select(
+        DSL.row(FILM.fields()),
+        DSL.row(FILM.filmActor().fields()),
+        DSL.row(FILM.filmActor().actor().fields())
+      )
+      .from(FILM)
+      .join(FILM.filmActor())
+      .join(FILM.filmActor().actor())
+      .limit(pageSize)
+      .offset((page - 1) * pageSize)
+      .fetchInto(FilmWithActor.class);
+  }
+
+  // 이렇게도 쓸 수 있다.
+  public List<FilmWithActor> findFilmWithActorsListExplicitPathJoin2 (Long page, Long pageSize) {
+    return dsl.select(
+        FILM,
+        FILM.filmActor(),
+        FILM.filmActor().actor()
+      )
+      .from(FILM)
+      .join(FILM.filmActor())
+      .join(FILM.filmActor().actor())
+      .limit(pageSize)
+      .offset((page - 1) * pageSize)
+      .fetchInto(FilmWithActor.class);
+  }
 }
